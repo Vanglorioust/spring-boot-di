@@ -15,13 +15,13 @@ import java.util.stream.Collectors;
 public class ProductServiceImp implements ProductService{
 
     @Autowired
-    @Qualifier("productRepositoryImp")
+//    @Qualifier("productRepositoryImp")
     private ProductRepository repository;
     private Environment environment;
 
-//    public ProductServiceImp(@Qualifier("productRepositoryImp") ProductRepository repository) { // Constructor injection
-//        this.repository = repository; // Dependency injection
-//    }
+    public ProductServiceImp(ProductRepository repository) { // Constructor injection
+        this.repository = repository; // Dependency injection
+    }
 
     @Override
     public List<Product> findAll() {
